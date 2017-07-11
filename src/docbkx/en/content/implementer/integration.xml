@@ -517,7 +517,17 @@
 			
 	<section>
 		<title>Implementation steps for successful data and system integration</title>
-		<para>The purpose of this step-by-step DHIS2 Implementation Guide is to provide a methodology for implementers to create and support a DHIS2 integration scenario.  The guide is based on the best practices and lessons learned.  The guide advocates for a country driven, iterative, and agile approach that begins with collecting user stories and functional requirements.  The guide is intended as a framework that can be adapted to the specific context of each country. The content describes specific examples for each step detailing user stories, data specifications, job aids and checklists to guide the use of the reference implementation software. The implementation process includes the following steps:</para>
+		<para>The purpose of this step-by-step DHIS2 Implementation Guide is to provide a methodology for
+			implementers to create and support a DHIS2 integration scenario. The guide is based on
+			the best practices and lessons learned. The guide advocates for a country driven,
+			iterative, and agile approach that begins with collecting user stories and functional
+			requirements. The guide is intended as a framework that can be adapted to the specific
+			context of each country. The content describes specific examples for each step detailing
+			user stories, data specifications, job aids and checklists to guide the use of the
+			reference implementation software. The basic structure, including the 6 steps, are based
+			on the <link
+				xlink:href="https://wiki.ohie.org/display/documents/OpenHIE+Planning+and+Implementation+Guides"
+				>OpenHIE implementation methodology</link>:</para>
 		<para><emphasis role="bold">Step 1</emphasis>: Identify Stakeholders and Motivations for Improved Facility Data</para>
 		<para><emphasis role="bold">Step 2</emphasis>: Document Facility Registry Specifications and User Stories</para>
 		<para><emphasis role="bold">Step 3</emphasis>: Set Up Initial Instance</para>
@@ -528,14 +538,35 @@
 		<screenshot>
 			<mediaobject>
 				<imageobject>
-					<imagedata width="100%" align="center" fileref="../../resources/images/implementation_guide/implementation_steps.png" format="PNG"/> <!--Please provide the reference to image in fileref attribute-->
+					<imagedata width="100%" align="center" fileref="../../resources/images/implementation_guide/implementation_steps.png" format="PNG"/>
 				</imageobject>
 			</mediaobject>
 		</screenshot>
 		</para>
+		<para/>
+		<para>In addition to these steps related to interoperability, it is also interesting to
+			reference back to some of the general DHIS2 implementation experiences and best
+			practises given in the sections on <link
+				xlink:href="https://docs.dhis2.org/master/en/implementer/html/dhis2_implementation_guide_full.html#d0e86"
+				>Recommendations for National HIS Implementations</link> and <link
+				xlink:href="https://docs.dhis2.org/master/en/implementer/html/dhis2_implementation_guide_full.html#d0e250"
+				>Setting Up a New Database</link>. A typical DHIS2 implementation approach which is
+			also vital for interoperability projects is a <emphasis role="bold"
+				>participatory</emphasis> approach. This approach stresses to include right from
+			project start <link
+				xlink:href="https://docs.dhis2.org/master/en/implementer/html/dhis2_implementation_guide_full.html#d0e255"
+				>a local team</link> with different skills and background to assume responsibility
+			as soon as possible. </para>
+		<para/>
 				<section>
 					<title>Step 1: Define strategy, stakeholders and data usage objectives</title>
-					<para>In a first step, the objectives of the integration project will be defined. As with every technology project, there should be a clear <emphasis role="bold">consensus on strategic and functional objectives</emphasis>. The sole driving force should not be technological innovation and feasibility but a clearly defined organisational goal. This step is intended to answer the question: “Why do we want to connect systems or integrate data from different sources with DHIS2?”</para>
+					<para>In a first step, the objectives of the integration project will be defined. As with every
+				technology project, there should be a clear <emphasis role="bold">consensus on
+					strategic and functional objectives</emphasis>. Technological innovation and
+				feasibility should not be the sole driving force but rather a clearly defined
+				organisational goal. Therefore this step is also intended to answer the question:
+				“Why do we want to connect systems or integrate data from different sources with
+				DHIS2?”</para>
 					<para>On a practical level, this leads to questions on the data integration approach, such as:</para>
 					<itemizedlist>
 						<listitem>
@@ -548,14 +579,16 @@
 							<para>Can you integrate the detailed (e.g. patient level or transactional) data into DHIS2, using DHIS2 tracker functions?</para>
 						</listitem>
 						<listitem>
-							<para>If you want to create an data exchange connection between DHIS2 and another system how do you define ownership and responsibilities?</para>
+							<para>If you want to create a data exchange connection between DHIS2 and another system,  how
+						do you define ownership and responsibilities?</para>
 						</listitem>
 					</itemizedlist>
 					<para>Activities to answer this question are described below and will lay the groundwork for an DHIS2 interoperability project.</para>
 				<section>
 					<title>Identify Stakeholders and Motivations</title>
 					<para>It is in the nature of interoperability projects to have more than one stakeholder. Stakeholders from different areas need to agree on a common system approach, for example the team responsible for the national HMIS (e.g. the M#038;E department or Planning Department) and the Logistics Department in case of an LMIS implementation. These two main areas often have sub-divisions, e.g. in the LMIS area the procurement unit, the warehousing unit, the transport unit. In addition, stakeholders from disease specific programs will have their own regimens and commodity managers. In addition to these local actors, international partners (agencies, donors, iNGOs, consultancies) are often also involved in the decision making process.</para>
-					<para>It´s good to take a look at the main motivations of the stakeholders and how to mitigate risks resulting from potential diverging interests.</para>
+					<para>Therefore it´s interesting to look at the main motivations of the stakeholders and how to
+					mitigate risks resulting from potential diverging interests.</para>
 					<itemizedlist>
 						<listitem>
 							<para>Central MoH Departments such as <emphasis role="bold">M&#038;E &#038;</emphasis> Planning often are the main stakeholders for a standardisation of indicators and IT Systems</para>
@@ -570,7 +603,13 @@
 							<para><emphasis role="bold">Specialized functional areas</emphasis> (such as Human Resources, Logistics, Hospital Management) are often in a sandwich position, having to cater to the information needs of several different stakeholders, while trying to achieve operational efficiency with limited resources.</para>
 						</listitem>
 					</itemizedlist>
-					<para>By identifying who is interested to provide or utilize the data, the lead implementers can start to form a project team to inform the design and implementation. One method for characterizing stakeholders involves grouping interested parties by their functional roles. The existing infrastructure and procedures are also important to understanding to gauge governance and curation. Understanding the stakeholders and their corresponding system is a critical first step. Below are job aides to assist in this initial process.</para>
+					<para>By identifying who is interested to provide or utilize the data, the lead implementers
+					can start to form a project team to inform the design and implementation. One
+					method for characterizing stakeholders involves grouping interested parties by
+					their functional roles. The existing infrastructure and procedures are also
+					important to understanding governance and curation options. Understanding the
+					stakeholders and their corresponding systems is a critical first step. Below are
+					job aides to assist in this initial process.</para>
 					<informaltable frame="all">
 						<tgroup cols="1">
 							<tbody>
@@ -587,8 +626,14 @@
 													<emphasis role="underline">Stakeholder List Template</emphasis></link></para>
 											</listitem>
 											<listitem>
-												<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/spreadsheets/d/1RStGYat9SPG2_iqx32mVrKl-9bELJ1nfay72W4Uupp4/edit#gid=0"> 
-													<emphasis role="underline">Infrastructure &#038; Procedures Checklist</emphasis></link></para>
+												<para><link xmlns:xlink="http://www.w3.org/1999/xlink"
+												xlink:href="https://docs.google.com/spreadsheets/d/1RStGYat9SPG2_iqx32mVrKl-9bELJ1nfay72W4Uupp4/edit#gid=0">
+												<emphasis role="underline">Infrastructure &#038;
+												Procedures Checklist </emphasis></link>
+												</para>
+												<para/>
+												<para>Examples refer to OpenHIE facility registry
+												systems</para>
 											</listitem>
 									</itemizedlist>	</para>
 									</entry>
@@ -598,17 +643,23 @@
 					</informaltable>
 				</section>
 					<section>
-						<title>Embedding new system in national eHealth Strategy</title>
-						<para>…….</para>
-					</section>
-					<section>
 						<title>eHealth System inventory</title>
 						<para>It is important to get a clear view on the overall IT systems landscape. This can help make sure that interoperability investment is done to strengthen the main systems and that the investments contribute to a <emphasis role="bold">simplification</emphasis> of the system architecture. For example, if the system inventory shows that there are a lot of redundant functional systems, e.g. more than 10 different logistics systems or modules in a country, the interoperability project should try to contribute to a mid or long-term rationalization of this situation. This could mean to participate in a national consensus finding process to identify the most future-proof solutions, identify national “champions” for each speciality and develop a roadmap for aligning these systems or data and removing underutilized or redundant systems.</para>
-						<para>Also in this context it is interesting to analyse whether simple <xref linkend="lm"/> indicators can be collected and managed in DHIS2 itself. Once the stable and sustainable systems have been identified, planning for a data exchange with DHIS2 can start.</para>
+						<para>Also in this context it is interesting to analyse whether simple indicators can be
+					collected and managed in DHIS2 itself (as this is later explained in an <link
+						linkend="lm">LMIS example</link>). Once the stable and sustainable systems
+					have been identified, planning for a data exchange with DHIS2 can start.</para>
 					</section>
 					<section>
 						<title>Explore Opportunities and Challenges</title>
-						<para>The motivations driving an implementation can be detailed by the perceived opportunities or challenges that stakeholders face. This might include the desire to share data across systems related to health facilities for supply chain management, monitoring and evaluation, health service delivery and many other systems. User stories and use cases will be documented in depth during Step 2, but a high level vision of motivations to engage with partners is also needed.  The job aide below will help to create a conceptual foundation for future activities.</para>
+						<para>The motivations driving an implementation can be detailed by the perceived opportunities
+					or challenges that stakeholders face. This might include the desire to share
+					data across systems related to health facilities for supply chain management,
+					monitoring and evaluation, health service delivery and many other systems. User
+					stories and use cases will be documented in depth during Step 2, but a high
+					level vision of motivations to engage with partners is also needed. The job
+					aides below will help to create a conceptual foundation for future
+					activities.</para>
 						<informaltable frame="all">
 							<tgroup cols="1">
 								<tbody>
@@ -636,6 +687,8 @@
 													<listitem>
 														<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1jSyiytftmCGM_-d5hfKS_mVhDkh0Ol1ZdSsPc-wN7gU/edit#heading=h.69q14eed6q35"> 
 															<emphasis role="underline">Tanzania Facility Registry Goals and Challenges</emphasis></link></para>
+												<para>Examples refer to OpenHIE facility registry
+												systems</para>
 													</listitem>
 											</itemizedlist></para>
 										</entry>
@@ -656,10 +709,25 @@
 											<para> <emphasis role="bold">Country example: Ghana CHIM</emphasis>
 												<itemizedlist>
 													<listitem>
-														<para><emphasis role="bold">Stakeholder cooperation</emphasis>: Ghana CHIM has a clear position towards vertical programs and other partners with proper software initiatives. CHIM establishes DHIS2 as an attractive data collection option, supporting other GHS stakeholders to connect to DHIS2 and to work on a common interoperability strategy, evolving DHIS2 according to stakeholder needs. <emphasis role="bold">This also includes data sharing agreements </emphasis>.</para>
+														<para><emphasis role="bold">Stakeholder cooperation</emphasis>: The Ghana
+												<emphasis>Centre for Health Information Management
+												</emphasis>(CHIM) has a clear position towards
+												vertical programs and other partners with proper
+												software initiatives. CHIM establishes DHIS2 as an
+												attractive data collection option, supporting
+												other GHS stakeholders to connect to DHIS2 and to
+												work on a common interoperability strategy,
+												evolving DHIS2 according to stakeholder needs.
+												<emphasis role="bold">This also includes data
+												sharing agreements </emphasis>.</para>
 													</listitem>
 													<listitem>
-														<para><emphasis role="bold">Strong sense of system ownership</emphasis>: CHIM has a strong determination to build up the necessary know-how inside the CHIM team to configure and maintain the system. The CHIM team consists of Health Information Officers, that combine Public Health and Data Management skills. In addition, CHIM established a yearly maintenance cycle, revising and adding indicators in collaboration with stakeholders, updating the system configuration and documentation.</para>
+														<para><emphasis role="bold">Strong sense of system ownership</emphasis>: CHIM has a
+												strong determination to build up the necessary
+												know-how inside the CHIM team to configure and
+												maintain the system. The CHIM team consists of
+												Health Information Officers, that combine Public
+												Health and Data Management skills.</para>
 													</listitem>
 												</itemizedlist>	
 											</para>
@@ -686,304 +754,81 @@
 	</section>
 		<section>
 			<title>Step 2: Document Specifications and Requirements</title>
-			<para>Integrated systems should be responsive to users’ needs and the local context. User stories and data specifications are two ways to describe: “What will the integrated systems achieve and how should they operate?”. A primary objective of this guide is to promote and facilitate a country driven and user requirements based process. To complete these activities, in-country meetings of stakeholders are highly recommended and can expedite the process.</para>
-			<para>Functional requirements describe how a system is to operate and what types of expectations exist for the tool. User stories are the primary mechanism. In some instances it may be desirable to describe in greater detail the user stories as a more thorough requirement.</para>
 		<section>
-			<title>Collect Existing Metadata</title>
-			<para>To inform the collection and documentation of data specifications, collect existing metadata sources data. This may include old forms, facility lists, administrative hierarchies, data dictionaries, commodity lists, disease codes, and other existing data element sources. Some examples of metadata collected in other countries are included below.</para>
-			<informaltable frame="all">
-				<tgroup cols="1">
-					<tbody>
-						<row>
-							<entry>
-								<para> <emphasis role="bold">Country Examples</emphasis></para>
-								<para><emphasis role="bold">Tanzania</emphasis>: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://drive.google.com/file/d/0B8FXnkGZqsEoZ2FfOGZKek5QQjg/edit"><emphasis role="underline">Health Facility Form</emphasis></link>, <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/spreadsheets/d/1kzKDVIxzpTvtjxl4q3ttFZIFudDgCG0yWEKdq-Xu9QA/edit#gid=0"><emphasis role="underline">Facility Data Sources</emphasis></link></para>
-								<para><emphasis role="bold">Rwanda</emphasis>: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/file/d/0B_RUEKy5Lc7BaUM3alNCM0ZTTkE/edit"><emphasis role="underline"> Facility Registry Annual Survey</emphasis></link>, <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/file/d/0B_RUEKy5Lc7BVEEzZmRvaUU4emc/edit?usp=drive_web"><emphasis role="underline">Facility Registration Form</emphasis></link></para>
-							</entry>
-						</row>
-					</tbody>
-				</tgroup>
-			</informaltable>
+			<para>
+					<itemizedlist>
+						<listitem>
+							<para>Collect existing metadata</para>
+						</listitem>
+						<listitem>
+							<para>Document data specifications</para>
+						</listitem>
+						<listitem>
+							<para>Document user stories</para>
+						</listitem>
+					</itemizedlist>
+				</para>
 		</section>
 			
-			<section>
-				<title>Document Data Specifications</title>
-				<para>A data specification document is a technical tool describing the master data elements or the information to be managed in the systems.  This is a similar concept to a data dictionary where the contents and format of data elements in the system are documented. It is recommended that a stakeholder meeting be used along with the tools below an in-country meeting to expedite the process of documenting a data specification.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para> <emphasis role="bold">Job aids</emphasis>:</para>
-									<itemizedlist>
-										<listitem>
-											<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1V1nw2aLUUdDHJk_C36GRpiPAcRW1n89WaYZtFTWp4mE/edit"><emphasis role="underline">Facility Registry Data Specification Guide</emphasis></link>, <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/file/d/0B_RUEKy5Lc7BS2swR3ZDTjZZeTQ/edit"><emphasis role="underline">Draft WHO MFL Guide</emphasis></link></para>
-										</listitem>
-										<listitem>
-											<para>Tanzania Example:  <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1X_3unJ6v3ZOgmXHQ4W98zKXzy7uifi9h_ZLUyULX88M/edit"><emphasis role="underline">TZ Data Specification</emphasis></link></para>
-										</listitem>
-										<listitem>
-											<para>Rwanda Example: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://drive.google.com/file/d/0B_RUEKy5Lc7Bd0tuYzVmcFdiY1E/edit"><emphasis role="underline">RW Registry Specifications (See Page 17)</emphasis></link></para>
-										</listitem>
-									
-									</itemizedlist>	
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-			</section>
-			
-			<section>
-				<title>Document User Stories</title>
-				<para>User Stories are a mechanism to gather user requirements and/or core requirements describing the desired registry functionality.  User Stories also promote agile user-centred design and help to identify requirements within the local context.  The following job aid has been synthesized from facility registry implementations and can help guide the collection of user stories for your implementation.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para> <emphasis role="bold">Job Aides</emphasis></para>
-									<itemizedlist>
-										<listitem>
-											<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://xp123.com/articles/invest-in-good-stories-and-smart-tasks/"><emphasis role="underline">INVEST in Good Stories, and SMART Tasks</emphasis></link></para>
-										</listitem>
-										<listitem>
-											<para><link xmlns:xlink="https://docs.google.com/spreadsheets/d/1UdBd0WSTM77LqW7APRxnsriGzgIfSFO25orAP5sSTj4/edit#gid=0"><emphasis role="underline">User Story Comparison</emphasis></link></para>
-										</listitem>
-										<listitem>
-											<para><link xmlns:xlink="https://docs.google.com/document/d/17Gu76gShQhPz6axQzirT7c8LL8Ckwk8qnekC-SSKLL0/edit"><emphasis role="underline">Risk Identification and Management</emphasis></link></para>
-										</listitem>
-									</itemizedlist>	
-									<para><emphasis role="bold">Country examples</emphasis></para>
-									<itemizedlist>
-										<listitem>
-											<para>Tanzania: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/spreadsheets/d/1HV5oCVNj-ONFaMzT-ckO6KJIRgdsH094F2orRHsyecQ/edit#gid=0"><emphasis role="underline">User Stories</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/file/d/0B_RUEKy5Lc7BN2RuMXEyMlU4NGs/edit"><emphasis role="underline">Functional Requirements v0.3</emphasis></link></para>
-										</listitem>
-										<listitem>
-											<para>Rwanda: <link xmlns:xlink="https://docs.google.com/file/d/0B_RUEKy5Lc7BVF9fcXBQVjlveE0/edit"><emphasis role="underline">User Requirements</emphasis></link>, <link xmlns:xlink="https://bitbucket.org/instedd/resource_map/wiki/User_Stories"><emphasis role="underline">General Resource Map User Stories</emphasis></link></para>
-										</listitem>
-									</itemizedlist>	
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-			</section>
+			<section/>
 			</section>
 		
 		<section>
 			<title>Step 3: Carry Out Specifications and Identify Gaps</title>
-			<para>Using the draft data specifications and user stories as the foundation to move forward, the next step is to initiate an agile and iterative development process of the systems.  The main outcome from this step is the implementation a tangible version of the new or updated systems, however it is common that all the previously documented requirements will not be completed.</para>
-		<section>
-			<title>Implement the Specifications</title>
-			<para>The data specification and user stories for the systems can now be used as the basis to:
-				<orderedlist>
-					<listitem>
-						<para>Determine the appropriate software application and</para>
-					</listitem>
-					<listitem>
-						<para>Implement the data specification to create schemas</para>
-					</listitem>
-				</orderedlist>
-			</para>
-		
-		<informaltable frame="all">
-				<tgroup cols="1">
-					<tbody>
-						<row>
-							<entry>
-								<para> <emphasis role="bold">Functional example: Facility registry</emphasis></para>
-								<para>To view the free and open source tool used by the Tanzania and Rwanda facility registry reference implementations, see the <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://resourcemap.instedd.org/en"><emphasis role="underline">Resource Map Homepage</emphasis></link>.  A demo for setting up your own facility registry is included below.  Other applications may also be used as a facility registry given that they adequately respond to the prioritized user stories.   The resulting version of the facility registry may not fully reflect the data specifications and user stories, but these limitations will be addressed in an iterative and agile approach in the next step of the implementation guide.  Several reference documents are included below to assist in this process.</para>
-							</entry>
-						</row>
-					</tbody>
-				</tgroup>
-			</informaltable>
-			
-			<informaltable frame="all">
-				<tgroup cols="1">
-					<tbody>
-						<row>
-							<entry>
-								<para> <emphasis role="bold">Job aids</emphasis></para>
-								<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/spreadsheets/d/1UdBd0WSTM77LqW7APRxnsriGzgIfSFO25orAP5sSTj4/edit?usp=sharing"><emphasis role="underline">User Story Comparison</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/spreadsheets/d/1CoJlor-DL5VMTmFZkK_jzTCuTJ4o6qzP-uU2Ub2tPAM/edit?usp=sharing"><emphasis role="underline">Facility Registry Implementations</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://ohie.org/demo"><emphasis role="underline">Facility Registry Demo</emphasis></link> </para>
-							</entry>
-						</row>
-					</tbody>
-				</tgroup>
-			</informaltable>
-		</section>
-			<section>
-				<title>Identify and Prioritize Incomplete User Stories</title>
-				<para>It is likely that the systems implemented in Activity 3.1 will have gaps and limitations when compared to the ideal state described by users.  To address these shortfalls as well potential uncertainty regarding requirements, use an agile approach to regularly identify and prioritized incomplete users stories.  Popular tools to manage this process include <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/"><emphasis role="underline">GitHub</emphasis></link> repositories and <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://trello.com/"><emphasis role="underline">Trello</emphasis></link> boards to document and prioritize user stories and responsible parties.  See below for an example and a job aid.</para>
-				<para>Given the cross-cutting nature of these activities, a job aid has been created to facilitate the landscaping and needs assessment process.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para><emphasis role="bold">OHIE Example</emphasis>
-										<itemizedlist>
-											<listitem>
-												<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/facilityregistry/reference_implementation/issues?q=is%3Aopen+sort%3Aupdated-desc"><emphasis role="underline">Github - OHIE Reference Implementations</emphasis></link> </para>
-											</listitem>
-										</itemizedlist>		
-									</para>
-									<para><emphasis role="bold">Job aid</emphasis>: 
-										<itemizedlist>
-											<listitem>
-												<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1wDyUSQ1bjoUsOiK5aNFnPogDVviVy9DwGjMVG_QiN1c/edit#heading=h.w3lglep7lfm"><emphasis role="underline">Landscaping and Needs Assessment Scripts</emphasis></link> </para>
-											</listitem>
-										</itemizedlist>	
-									</para>
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-			</section>
-		</section> <!-- step3  -->
+			<itemizedlist>
+				<listitem>
+					<para>Implement the specifications</para>
+				</listitem>
+				<listitem>
+					<para>Identify and piroritize incomplete user stories</para>
+				</listitem>
+			</itemizedlist>
+		<section/>
+		</section> <!--   -->
 		
 		<section>
 			<title>Step 4: Iteration and User Testing</title>
-			<para>Once an initial version of the system is implemented, a process of resolving and prioritizing the remaining user stories will begin.  The iterative development of the tool should be ongoing and also incorporate new stakeholders and/or user stories as they are identified.  Close collaboration between technical and non-technical stakeholders is key to agile development to ensure technical solutions align with users’ needs.  The core outcome from this step is a system with the user stories completed to create a <emphasis role="bold">minimally viable tool</emphasis>.</para>
-		<section>
-			<title>Agile and Iterative Development</title>
-			<para>Agile and iterative development takes the prioritized lists and applies the project team to resolve the prioritized user stories.  Additional requirements and user stories will continue to be generated throughout the lifetime of the implementation and should be prioritized and similarly addressed by the team.  Initially, the goal of this activity will be to address the user stories that will result in a viable and operational facility registry.  Additional, development will continue to occur and will also be informed through routine testing and re-prioritization among the team.  A github repository to track this process can help to keep both technical and non-technical stakeholders engaged and accountable.</para>
-			<para><emphasis role="bold">OHIE Example</emphasis>: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/facilityregistry/reference_implementation/issues?q=is%3Aopen+sort%3Aupdated-desc"><emphasis role="underline">Github - Reference Implementations</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/MichaelKambenga/ihfr_curation"><emphasis role="underline">Github - UCC Curation Tool</emphasis></link></para>
-		</section>
-			<section>
-				<title>User Testing</title>
-				<para>A key component of the agile process initiated in Activity 4.1, will be to conduct routine field testing of the system should be completed to gain feedback from a subset of user.  The goal of this activity is to obtain user feedback on the use of the systems.  The testing should be a separate activity from augmented or decentralized processes to collect and standardize data that may also be desired as part of the governance and management of the system.  It is also likely that the formality of the testing may vary based on the availability of resources and at the request of the central stakeholders.</para>
-				<para><emphasis role="bold">Job aid</emphasis>: <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1ZGqn_0XJYdzZLTE25sUjQEkeosM5lSV5xJ0GsmAjGzU/edit#heading=h.2qdru6kgu2yu"><emphasis role="underline">User Testing Guide</emphasis></link> </para>
-			</section>	
-			<section>
-				<title>Collect, Reconcile and Upload Data</title>
-				<para><emphasis role="italic">drafting in progress…</emphasis></para>
-				<para>ResourceMap Troubleshooting and Support is also available through the following online tools and communities.</para>
-				</section>	
+			<itemizedlist>
+				<listitem>
+					<para>Agile and iterative development</para>
+				</listitem>
+				<listitem>
+					<para>User testing</para>
+				</listitem>
+				<listitem>
+					<para>Collect, reconcile and upload data</para>
+				</listitem>
+			</itemizedlist>	
 			</section> <!-- step4 -->
 		<section> 
 			<title>Step 5: Scale-Up</title>
-			<para>The system will be at a point ready to be scaled more broadly among users and other systems that can provide or consume the data. The goal of this step is to engage nationally with users and systems to ensure the management and institutional processes are in place for ongoing curation, governance, and data utilization.</para>
-			<section> 
-				<title>Confirm User Roles and Responsibilities</title>
-				<para>While user stories were detailed during the early steps of the implementation guide, it is important to confirm the roles and responsibilities among the various stakeholders.  There will be existing and new responsibilities for users ranging from data collection, data entry, curation, governance, management and support roles.  By confirming the facility registry actor responsibilities user training can be focused on the correct staff.</para>
-				<para><emphasis role="bold">Tanzania Example</emphasis>: Roles and Responsibilities - Pending</para>
-			</section>
-			<section> 
-				<title>User Training</title>
-				<para>Next, expand the scope of engagement among users to build capacity and initiate or augment the level of ownership and responsibility for the system.  Training is intended to reinforce the various type of users that will be engaged.  While each country may use the system differently a job aid with some of the common training requirements is included here as a reference.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para> <emphasis role="bold">Job aid</emphasis> </para>
-										<itemizedlist>
-											<listitem>
-												<para><link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://docs.google.com/document/d/1usQJ-8CiOhSfitypPvcI89mbm7T2KPdycmNSpfj7zlA/edit"> <emphasis role="underline">Rwanda Training Plan</emphasis></link></para>
-											</listitem>
-										</itemizedlist>	
-									
-									
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>	
-			</section>
-			<section> 
-				<title>Critical Integrations</title>
-				<para>In addition to collecting and standardizing data in the central system, it is important to identify and achieve critical integrations with priority systems.  Multiple APIs are available to facilitate the automated transmission of data, however it will be required that some code be incorporated into the partner system to consume the API.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para> <emphasis role="bold">Functional example:</emphasis>
-										<itemizedlist>
-											<listitem>
-												<para>Common high priority systems to consider integration with the facility registry include: DHIS2, CommCare, PROMIS, OpenLMIS, etc...</para>
-											</listitem>
-										</itemizedlist>	
-									</para>
-									
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>	
-			</section>
+			<itemizedlist>
+				<listitem>
+					<para>Confirm user roles and responsibilities</para>
+				</listitem>
+				<listitem>
+					<para>User training</para>
+				</listitem>
+				<listitem>
+					<para>Critical integrations</para>
+				</listitem>
+			</itemizedlist>
+			<section/>
 		</section> <!-- step5 -->
 		
 		<section>
 			<title>Step 6: Ongoing Support</title>
-			<para>Base on the <emphasis role="bold"> accompanying implementation support structure, a permanent support structure needs </emphasis>to be set-up. The main challenge is to have clear responsibilities. In an ideal situation, we are dealing with two stable systems that each have already their own clearly defined support structure.</para>
+			<para>While during the implementation phase a temporary support structure should be available,
+				afterwards a permanent support structure needs to be set-up. The main challenge is
+				to have clear responsibilities. In an ideal situation, we are dealing with two
+				stable systems that each have already their own clearly defined support
+				structure.</para>
 			<para>However in reality some recurring challenges may have to be dealt with: Many Public Health System are undergoing dynamic developments, leading to changes in data collection needs or calculation of indicators.</para>
 			<para>Interoperability tends to be a tedious technical and organisational charge. All of the three described initiatives have consumed a considerable effort of qualified <emphasis role="bold">resources</emphasis> to activate APIs. In addition, with each new release of any involved system, data flows require re-testing and if necessary adaptations. To be successful these implementation projects typically have to go through a series of complex steps, such as the agreement on an interoperability approach embedded in the national eHealth strategy, the definition of data standards and sustainable maintenance structure, and attaining a stakeholder consensus on data ownership and sharing policies. There can be some long term consequences when data and systems are knitted together - it creates <emphasis role="bold">new roles, tasks and categories of labour</emphasis> which need to be planned for (metadata governance, complex system administration, boundary negotiators, etc.). A solution could be to discuss the new responsibilities beforehand, assigning them to job descriptions, teams and specific positions.</para>
-			<informaltable frame="all">
-				<tgroup cols="1">
-					<tbody>
-						<row>
-							<entry>
-								<para> <emphasis role="bold">Country example</emphasis></para>
-								<para>Comparing the three cases we can see how technology and system architecture choices impact the  <emphasis role="bold">resource needs</emphasis>. In the Senegal case the sophisticated technical architecture involved much external expertise, which may be challenging to be internalized. Tanzania and even more so Ghana seem to have relied much more on mostly local actors, using simpler technical approaches. In the case of Senegal it has to be seen, what the effort will be to maintain the demanding set-up and what resources are available for these tasks.</para>
-							</entry>
-						</row>
-					</tbody>
-				</tgroup>
-			</informaltable>
 			<section> 
 				<title>Metadata responsibility</title>
 				<para>Another important area is that of <emphasis role="bold">metadata governance</emphasis>, particularly in the scenarios of secondary use of data. In a stand-alone set-up, metadata, such as facility or commodity codes can be managed without much consideration of other stakeholder´s needs. But in an interoperability environment, metadata changes will have effects outside of the individual system. Metadata governance can be highly formalised through registries or more manual through human processes.</para>
 				<para>In order to determine the appropriate approach, is it useful to estimate the expected <emphasis role="role">metadata maintenance effort</emphasis> and the consequences of unsynchronized metadata across different systems. In the case of the LMIS/DHIS2 integrations, there are potentially thousands of facility identifiers that could go out of synch. However normally, facility identifiers do not change often since the physical infrastructure of most public health system is relatively constant. As to the commodities, although regimes and priority drugs may change over time, the number of datasets is relatively small.</para>
-				<informaltable frame="all">
-					<tgroup cols="1">
-						<tbody>
-							<row>
-								<entry>
-									<para> <emphasis role="bold">Country example</emphasis></para>
-									<para>The 3 cases illustrate different approaches of how to deal with this situation.  The Senegal case approaches interoperability through a middleware mapping layer, representing the highest conceptual and technical effort. Tanzania on the other hand made an initial transfer of facility data from dhis2 to openLMIS and is now maintaining the identifiers manually in openLMIS, based on the pragmatic perception, that they are expected to change only infrequently. The facility identifiers in DHIS2 are viewed as authoritative since they are the most complete listing available in any national system, while the LMIS only represents an excerpt. Regarding commodities, the LMIS could be considered the authoritative source or the leading system.</para>	
-								</entry>
-							</row>
-						</tbody>
-					</tgroup>
-				</informaltable>
-				<para>It should be expected that requirements and requests for the systems will evolve over time.  For this reason, ongoing support and continued agile/iterative strategies should remain in place.  This can be organized by the roles of the technical support and implementation teams to triage requests for data, system enhancements, integrations, operations support or general troubleshooting among users.  Common types of ongoing support are described below.
-					<itemizedlist>
-						<listitem>
-							<para><emphasis role="bold">Operations Support</emphasis>: Operations support is intended to maintain the logistics and infrastructure required.  Depending on the server location, operations support can include monitoring error logs, maintaining a server, ensuring security protocols, carry out backups, and updates as needed.</para>
-						</listitem>
-						<listitem>
-							<para><emphasis role="bold">Developer Support</emphasis>: Developer support is important to facilitate any future adaptations and the creation of external applications that augment the functionality.  For instance it may be desirable to create a specialized curation, workflow, or other application that would work in coordination with the system in a service oriented fashion.  Developer support will also include the identification, documentation and resolution of any enhancement requests or bugs. <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/facilityregistry/reference_implementation/issues?q=is%3Aopen+sort%3Aupdated-desc"><emphasis role="underline">Github: Reference Implementation Issues</emphasis></link></para>
-						</listitem>
-						<listitem>
-							<para><emphasis role="bold">Integration Support</emphasis>: Integration with the facility registry is critical to ensure that the data can be widely shared and distributed to existing and new eHealth systems. Ongoing support will be required to triage requests for integration, issues, and API enhancements to support other systems interested to consume facility registry data.  New systems that want to consume an API may also require some technical assistance to create an end node in their application to facilitate integration.</para>
-							<informaltable frame="all">
-								<tgroup cols="1">
-									<tbody>
-										<row>
-											<entry>
-												<para> <emphasis role="bold">Functional example: Facility registry</emphasis></para>
-												<para>A core component of integrating with a facility registry is the FRED API.  See the following links to documentation and ongoing issues. <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://facilityregistry.org/"> <emphasis role="underline">Facility Registry API (FRED API)</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://github.com/facilityregistry/fred-api"> <emphasis role="underline">Github: Fred API Issues</emphasis></link>; <link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_CSD.pdf"> <emphasis role="underline">Care Services Discovery - CSD</emphasis></link></para>
-											</entry>
-										</row>
-									</tbody>
-								</tgroup>
-							</informaltable>
-						</listitem>
-						
-						<listitem>
-							<para><emphasis role="bold">Data Support</emphasis>: Ongoing support will also require assistance for issues related to data collection, curation, analysis and utilization.  While the system is designed to fulfil user requirements there will be ongoing requirements to provide training, troubleshooting and respond to data access requests by users.  Other aspects of data support include data collection, entry, permissions, bulk imports, data flows, curation, and data quality.</para>
-						</listitem>
-						<listitem>
-							<para><emphasis role="bold">Help Desk Support</emphasis>: Help desk support may not be required initially, but as more users and organizations start using the system it is expected to become increasingly important to identify, document, triage and direct response to types of requests from the varied types of users.</para>
-						</listitem>
-					
-					</itemizedlist>	
-				</para>
-				<para><emphasis role="bold">Job Aide</emphasis>: TORs for tiered support</para>
 			</section>
 			
 		</section> <!-- step6 -->
