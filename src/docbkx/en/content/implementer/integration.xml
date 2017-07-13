@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <chapter version="5.0" 
 	xsi:schemaLocation="http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd" 
 	xmlns="http://docbook.org/ns/docbook" 
@@ -12,7 +11,7 @@
 	xmlns:mth="http://www.w3.org/1998/Math/MathML" 
 	xmlns:db="http://docbook.org/ns/docbook" 
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xml:id="integrationn">
+	xml:id="integration">
 	
 		<title>Integration concepts</title>
 		<para>
@@ -172,7 +171,7 @@
 			</para>
 			<para>The openHIE component layer covers meta or reference data (Terminology, Clients, Facilities), Personal data (Staff, Patient History) and national health statistics. The purpose is to ensure the availability of the same meta data in all systems that participate in the corresponding data exchange (e.g. indicator definitions, facility naming, coding and classification). In some cases, like the case of the Master Facility Registry, the data may also be used to provide information to the general public through a web portal. While the interoperability layer ensures data brokerage between the different systems, the external systems layer contains several sub-systems, many at point of service level, with often overlapping functional range.</para>
 			<para>There are different approaches to define an eHealth architecture. In the context of this DHIS2 guideline, we distinguish between approaches based on a 1:1 connection versus approaches based on an n:n connection (many-to-many).</para>
-			<section xml:id="integration" xreflabel="MIS/LMIS implementation in Senegal"> 
+			<section xml:id="integrationSection" xreflabel="MIS/LMIS implementation in Senegal"> 
 				<title><emphasis>1:1</emphasis> integration</title> <!--No subsection element in DTD, thats why using section element-->
 				<para>In many countries a national HMIS is often the first system to be rolled out to a large number of facilities and to manage a large number of data on a monthly or quarterly basis. When countries start to develop their health system architecture further, DHIS2 often will be connected to some other systems. This connection is done directly through a simple script, which automates a data transfer.</para>
 				<para>We talk of a 1:1 connection because it is limited to two systems. In the case of an LMIS/HMIS integration, one LMIS (e.g. openLMIS as is the case in Tanzania) will transfer data to DHIS2 as defined in the script. In case a second logistics system would want to transfer data to DHIS2 (e.g. commodity data for a specific disease program), a second script would have to written, to perform this task. These two scripts would then run independently from another, resulting in two separate 1:1 connections.</para>
@@ -769,10 +768,6 @@
 					</itemizedlist>
 				</para>
 		</section>
-			
-			<section/>
-			</section>
-		
 		<section>
 			<title>Step 3: Carry Out Specifications and Identify Gaps</title>
 			<itemizedlist>
@@ -783,8 +778,7 @@
 					<para>Identify and piroritize incomplete user stories</para>
 				</listitem>
 			</itemizedlist>
-		<section/>
-		</section> <!--   -->
+			</section> <!--   -->
 		
 		<section>
 			<title>Step 4: Iteration and User Testing</title>
@@ -813,7 +807,6 @@
 					<para>Critical integrations</para>
 				</listitem>
 			</itemizedlist>
-			<section/>
 		</section> <!-- step5 -->
 		
 		<section>
@@ -913,6 +906,6 @@
 					other. </para>
 			</section>
 		</section>
-		<section/>
 	</section>
+</section>
 </chapter>
